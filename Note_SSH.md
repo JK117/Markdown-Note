@@ -63,13 +63,17 @@ $ sudo nano /etc/ssh/sshd_config
 ### 2.2 客户端
 **生成密钥**
 ```
-$ ssh-keygen [-t rsa]
+$ ssh-keygen [-t rsa] [-b 4096] [-C username@domain]
 ```
-通过`-t`选择加密方式，可以根据提示选择是否使用私钥口令`passphrase`。
-默认生成将私钥文件 id_rsa 和公钥文件 id_rsa.pub在 `/home/<username>/.ssh` 目录下。
+- `-t`选择加密方式
+- `-b`选择加密位数
+- `-C`添加邮件地址
+- 根据提示输入路径和文件名称，默认会在当前目录下生成，建议生成在`~/.ssh/`目录下
+- 选择是否使用私钥口令`passphrase`。
+
 **拷贝公钥**
 ```
-$ ssh-copy-id <username>@<remote_host>
+$ ssh-copy-id [-i key_name.pub] <username>@<remote_host>
 ```
 执行后通过默认端口22将公钥写到远程主机的 ~/ .ssh/authorized_key 文件中，如果是其他的端口，可以使用命令：
 ```
@@ -83,22 +87,21 @@ $ ssh-copy-id -p <port> <username>@<remote_host>
 **从本地复制到远程服务器**
 复制文件
 ```
-$scp local_file remote_username@remote_ip:remote_folder
-$scp local_file remote_username@remote_ip:remote_file
+$scp local_file remote_username@remote_ip:file_path
 ```
 复制目录
 ```
-$scp -r local_folder remote_username@remote_ip:remote_folder
+$scp -r local_folder remote_username@remote_ip:folder_path
 ```
 **从远程服务器复制到本地**
 复制文件
 ```
-$scp remote_username@remote_ip:remote_folder local_file
-$scp remote_username@remote_ip:remote_file local_file
+$scp remote_username@remote_ip:file_path local_file
 ```
 复制目录
 ```
-$ $scp -r remote_username@remote_ip:remote_folder local_folder
+$ $scp -r remote_username@remote_ip:folder_path local_folder
 ```
 
 ### 3.2 远程主机不中断运行程序
+TBD
