@@ -75,10 +75,21 @@ $ ssh-keygen [-t rsa] [-b 4096] [-C username@domain]
 ```
 $ ssh-copy-id [-i key_name.pub] <username>@<remote_host>
 ```
-执行后通过默认端口22将公钥写到远程主机的 ~/ .ssh/authorized_key 文件中，如果是其他的端口，可以使用命令：
+执行后通过默认端口22将公钥写到远程主机的 `~/.ssh/authorized_keys`文件中，如果是其他的端口，可以使用命令：
 ```
 $ ssh-copy-id -p <port> <username>@<remote_host>
 ```
+也可使用scp指令将公钥复制到服务器端`.ssh`目录下使用
+```
+$ cat public_key.pub >> authorized_keys
+```
+
+### 2.3 连接服务器
+在客户端Shell中使用`ssh`指令
+```
+$ ssh [-i private_key] <username>@<remote_host>
+```
+若生成密钥对时使用了自定义文件名则必须通过`-i`指定私钥
 
 ***
 ## 3 技巧
