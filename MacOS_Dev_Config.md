@@ -70,4 +70,4 @@ To install iTerm2, run:
 $ brew cask install iterm2
 ```
 
-[Configuring Completions]:https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
+[Configuring Completions](https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh)
