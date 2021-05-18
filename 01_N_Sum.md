@@ -1,4 +1,4 @@
-  # N Sum
+# N Sum
 
 - 1. <font color=green>Two Sum</font> `Array` `Hash Table`
 - 167. <font color=green>Two Sum II - Input array is sorted</font> `Array` `Two Pointers` `Binary Search`
