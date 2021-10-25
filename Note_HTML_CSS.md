@@ -1,8 +1,8 @@
-# Html 笔记
+# HTML & CSS 笔记
 
 ***
 ## 1 a标签去下划线
-```css
+```scss
 //设置a标签的默认状态去除下划线
 a{text-decoration: none;}
 
@@ -24,4 +24,11 @@ a:active{text-decoration:none;}
 ### 2.2 在目标区域的最外层div上添加id
 ```html
 <div class="product" id="productId"></div>
+```
+
+## 3 btn悬浮样式
+```scss
+div.some-class:hover, .btn-is-hovered {
+   background-color: purple;
+}
 ```
