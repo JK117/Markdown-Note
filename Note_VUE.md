@@ -39,11 +39,13 @@ proceedAsFunc(f) {
 counter1() {
     //productId是将要跳转区域的id
     const returnEle = document.querySelector("#productId")
-    if (!!returnEle) {
+    if (returnEle) {
         // true 是默认的
         returnEle.scrollIntoView(true)
+        // 平滑移动
+        returnEle.scrollIntoView({behavior: 'smooth'})
     }
     //counter1是将要返回地方的id
-    document.querySelector("counter1").scrollIntoView(true); 
+    // document.querySelector("counter1").scrollIntoView(true); 
 }
 ```
